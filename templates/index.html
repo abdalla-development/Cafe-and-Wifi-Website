@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/css/styles.css" >
+{% endblock %}
+{% block title %}Coffee and Wifi{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">☕️ Coffee & Wifi 💻 list That is Great Remote Working Website </h1>
+  <p class="lead">Want to work in a cafe but need power, comfortable area and  strong wifi connection?</p>
+  <hr class="my-4">
+        <div class="row">
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://www.baltzersens.co.uk/wp-content/uploads/2015/08/Great-Coffee-800x500.jpg" alt="...">
+            </div>
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1520/https://swag.com/blog/app/uploads/2019/10/4-5-Tips-for-creating-a-family-friendly-work-environment.jpg" alt="...">
+            </div>
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://i.kinja-img.com/gawker-media/image/upload/s--b6J1nv2O--/c_scale,fl_progressive,q_80,w_800/ku1iqof4rox16un5j7mg.jpg" alt="...">
+            </div>
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://loveincorporated.blob.core.windows.net/contentimages/main/e46573c4-ccd0-4aca-99c3-bbbe3a3b9fe3-john-lewis-competition.jpg" alt="...">
+            </div>
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://th.bing.com/th/id/OIP.G0i6zEeIvoWMV9iFkt-e4gHaFM?pid=ImgDet&rs=1" alt="...">
+            </div>
+            <div class="col-md-2">
+                <img class="img-responsive" style="width:100% height:100%" src="https://th.bing.com/th/id/OIP.b2RkXOhJKcX7cq583hBpqQHaEG?w=309&h=180&c=7&o=5&dpr=1.25&pid=1.7" alt="...">
+            </div>
+        </div>
+   <hr class="my-4">
+
+  <p>You've found the right place! Checkout our collection of cafes.</p>
+  <a class="btn btn-warning btn-lg" href="{{url_for('cafes')}}" role="button">Find one Now!</a>
+  <a class="btn btn-warning btn-lg" href="{{url_for('add')}}" role="button">Recommend One!</a>
+</div>
+    </div>
+{% endblock %}

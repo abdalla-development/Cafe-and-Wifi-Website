@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/css/styles.css" >
+{% endblock %}
+{% block title %}Coffee and Wifi{% endblock %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+  <div class="row center">
+    <div class="col-sm-12 col-md-8">
+      <h1>Recommend New cafe</h1>
+      <!-- This is where your WTForm will go -->
+      {{ wtf.quick_form(form) }}
+        <br>
+      <div class="row">
+          <a class="btn btn-warning btn-md" href="{{url_for('cafes')}}" role="button">See all cafes</a>
+          <a class="btn btn-warning btn-md" href="{{url_for('home')}}" role="button">Go Back Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

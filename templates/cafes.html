@@ -1,0 +1,121 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/css/styles.css" >
+{% endblock %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table">
+          <!-- This is where you will write the code to render a Bootstrap
+          Table that contains all the information from the
+          cafe-data.csv file. -->
+          <tr>
+              <form method="post">
+              <div class="row g-3">
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" placeholder="Search By Area" name="address" aria-label="City">
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" href="cafes" class="btn btn-warning btn-md" name="">Search</button>
+                </div>
+              </div>
+              </form>
+          </tr>
+          <br>
+          <tr>
+              <td>
+
+              </td>
+              <td>
+                  Name
+              </td>
+              <td>
+                  Map Link
+              </td>
+              <td>
+                  Images
+              </td>
+              <td>
+                  Location
+              </td>
+              <td>
+                  Seats
+              </td>
+              <td>
+                  Has Toilet
+              </td>
+              <td>
+                  Has Wifi
+              </td>
+              <td>
+                  Has Sockets
+              </td>
+              <td>
+                  Can Take Calls
+              </td>
+              <td>
+                  Coffee Price
+              </td>
+              <td>
+                  Delete
+              </td>
+          </tr>
+          {% for item in cafes %}
+          <tr>
+              <td>
+                  {{item.id}}
+              </td>
+              <td>
+                  {{item.name}}
+              </td>
+              <td>
+                  <a href="{{item.map_url}}">Address</a>
+              </td>
+              <td>
+                  <a href="{{item.img_url}}">Gallery</a>
+              </td>
+              </td>
+              <td>
+                  {{item.location}}
+              </td>
+              <td>
+                  {{item.seats}}
+              </td>
+              <td>
+                  {{item.has_toilet}}
+              </td>
+              <td>
+                  {{item.has_wifi}}
+              </td>
+              <td>
+                  {{item.has_sockets}}
+              </td>
+              <td>
+                  {{item.can_take_calls}}
+              </td>
+              <td>
+                  {{item.coffee_price}}
+              </td>
+              <td>
+                  <a class="btn btn-warning btn-sm" href="/delete/{{item.id}}" role="button">Delete</a>
+              </td>
+          </tr>
+          {% endfor %}
+
+  	  </table>
+
+      <p><a class="btn btn-warning btn-md" href="{{url_for('home')}}" role="button">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
